@@ -66,7 +66,7 @@
     <!-- Header area end -->
 
     <!--Main Slider-->
-    
+
 
 
 <?php get_template_part( 'slider' );?>
@@ -99,14 +99,14 @@
                                         <a href=""><img class="img-responsive transition7s" src="<?php echo get_template_directory_uri(); ?>/images/resource/blog-1.jpg" alt=""></a>
                                         <div class="post-caption transition7s">
                                             <ul>
-                                                <li><i class="fa fa-user"></i> <?php the_author( );?></li>
+                                                <li><i class="fa fa-user"></i><?php the_author();?></li>
                                                 <!-- <li><i class="fa fa-calendar"></i> <?php the_time( 'g:i a' )?> </li> -->
                                                 <li><i class="fa fa-comment"></i> <?php comments_popup_link( 'No Comment', '1 Comment >>', '% Comments');?></li>
                                             </ul>
                                         </div>
                                     </div>
                                     <div class="content">
-                                        <h3><a href="<?php the_permalink();?>"><?php the_title();?></a></h3>
+                                        <h3><a href="<?php the_permalink();?>"><?php the_title(); ?></a></h3>
                                         <div class="text-des">
                                         <?php the_excerpt();?>
                                         </div>
@@ -117,16 +117,16 @@
                                         <a class="btn btn-primary transition7s" href="news-single.html"><i class="fa fa-calendar"></i> <?php the_time( 'M d Y' )?></a>
                                         </div>
                                         <div class="pull-right">
-                                        <a class="btn btn-primary transition7s" href="<?php the_permalink( );?>">Read More</a>
+                                        <a class="btn btn-primary transition7s" href="<?php the_permalink();?>">Read More</a>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                        
-
-    <?php endwhile;?>
-    <?php endif;?>
+<?php endwhile; else : ?>
+ <p><?php esc_html_e('Sorry. No post matched with your criteria.'); ?></p>
+    <?php endif; ?>
 
 
 
